@@ -4,7 +4,7 @@ Fine-tuning a pretrained BERT encoder model for binary sentiment classification 
 
 ## Overview
 
-This project fine-tunes Google's `bert-base-uncased` — a bidirectional encoder-only transformer pretrained on masked language modeling — for sentiment analysis on the Rotten Tomatoes movie review dataset. Unlike decoder-only GPT-style models, BERT attends to both preceding and subsequent tokens, making it well-suited for tasks that require understanding an entire sequence rather than generating new text.
+This project fine-tunes Google's `bert-base-uncased`, a bidirectional encoder-only transformer pretrained on masked language modeling, for sentiment analysis on the Rotten Tomatoes movie review dataset. Unlike decoder-only GPT-style models, BERT attends to both preceding and subsequent tokens, making it well-suited for tasks that require understanding an entire sequence rather than generating new text.
 
 ## Model Architecture
 
@@ -17,7 +17,7 @@ BERT encoder (bert-base-uncased)
 → Sigmoid → probability of positive sentiment
 ```
 
-The `[CLS]` token's final hidden state serves as an aggregate representation of the entire input sequence — BERT is trained to encode sequence-level meaning into this position, making it a natural input to a classification head.
+The `[CLS]` token's final hidden state serves as an aggregate representation of the entire input sequence. BERT is trained to encode sequence-level meaning into this position, making it a natural input to a classification head.
 
 ## Dataset
 
@@ -45,7 +45,7 @@ Five misclassified validation examples are retrieved and examined. The dominant 
 
 ## Key Findings
 
-- A pretrained BERT model with a lightweight classification head achieves >80% validation accuracy with only 3 epochs of fine-tuning on ~8,500 examples — demonstrating the power of transfer learning from large-scale pretraining.
+- A pretrained BERT model with a lightweight classification head achieves >80% validation accuracy with only 3 epochs of fine-tuning on ~8,500 examples; demonstrating the power of transfer learning from large-scale pretraining.
 - Sentiment classification is not always well-defined: domain-specific language (film criticism) uses conventional "negative" vocabulary positively, creating genuine ambiguity.
 
 ## Tech Stack
